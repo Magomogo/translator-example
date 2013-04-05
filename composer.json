@@ -8,7 +8,7 @@
         }
     ],
     "require": {
-        "Magomogo/translator-utils": "dev-master",
+        "Magomogo/translator-utils": "dev-namespaces",
         "doctrine/couchdb": "dev-master"
     },
     "authors": [

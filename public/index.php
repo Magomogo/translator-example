@@ -14,18 +14,21 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 
 $app = translator();
 
-echo $app->translateAdapter(basename(__FILE__), 'ru')->translate('hello');
+echo $app->translate('hello');
 echo '<hr>';
-echo $app->injectAtClientSide(basename(__FILE__), 'ru');
+echo $app->injectAtClientSide('ru_RU');
 
 //--------------------------------------------------------------------------------------------------
 
 function translator() {
+    $storage = new Translator\Storage\CouchDb(new CouchDBClient(new HttpClient(), 'ru_RU'));
+    $mode = array_key_exists('t', $_GET) ?
+        Translator\Application::TRANSLATE_ON: Translator\Application::TRANSLATE_OFF;
+
     return new Translator\Application(
         '/translator/',
-        new Translator\CouchDbStorage(new CouchDBClient(new HttpClient(), 'ru')),
-        array_key_exists('t', $_GET) ?
-                Translator\Application::TRANSLATE_ON: Translator\Application::TRANSLATE_OFF
+        new \Translator\Adapter\Simple($storage->readTranslations(), $mode),
+        $mode
     );
 }
 ?>
