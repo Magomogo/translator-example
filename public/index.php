@@ -18,7 +18,7 @@ function translator() {
 
     return new Translator\Application(
         '/translator/',
-        new \Translator\Adapter\ICU($storage->mappedTranslations(), LOCALE),
+        new \Translator\Adapter\ICU($storage->mappedTranslations(), LOCALE, $mode),
         $mode
     );
 }
