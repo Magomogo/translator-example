@@ -11,7 +11,7 @@ include __DIR__ . '/../vendor/autoload.php';
 foreach (glob(__DIR__ . '/translations/??_??.php') as $translations) {
     $locale = substr(basename($translations), 0, -4);
 
-    $storage = new CouchDb(new CouchDBClient(new HttpClient(), $locale));
+    $storage = new CouchDb(new CouchDBClient(new HttpClient(), strtolower($locale)), $locale);
     $crawler = new Crawler($storage, new PhpView());
 
     $crawler->collectTranslations(array(__DIR__ . '/../public'), include $translations, '.php');

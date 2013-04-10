@@ -2,6 +2,7 @@
 
 use Doctrine\CouchDB\CouchDBClient;
 use Doctrine\CouchDB\HTTP\SocketClient as HttpClient;
+use Translator\Storage\CouchDb;
 
 require dirname(__DIR__) . '/vendor/autoload.php';
 
@@ -12,7 +13,7 @@ $app = translator();
 //--------------------------------------------------------------------------------------------------
 
 function translator() {
-    $storage = new Translator\Storage\CouchDb(new CouchDBClient(new HttpClient(), strtolower(LOCALE)));
+    $storage = new CouchDb(new CouchDBClient(new HttpClient(), strtolower(LOCALE)), LOCALE);
     $mode = array_key_exists('t', $_GET) ?
         Translator\Application::TRANSLATE_ON: Translator\Application::TRANSLATE_OFF;
 
