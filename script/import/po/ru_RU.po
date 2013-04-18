@@ -1,0 +1,22 @@
+#. С большой буквы
+msgid "now"
+msgstr "Сейчас"
+
+#. Приветствие, отдельным предложением
+msgid "hello"
+msgstr "Привет!"
+
+#. Количество минут, часть сообщения
+msgctxt "niceDate/time"
+msgid "minutes"
+msgstr "{0, plural, one {одна минута} few {# минуты} other {# минут} }"
+
+#. Количество страниц всего
+msgctxt "plural"
+msgid "numberOfPages"
+msgstr "Всего {0, plural, one {одна страница} few {# страницы} other {# страниц} }"
+
+#. Количество часов, часть сообщения
+msgctxt "niceDate/time"
+msgid "hours"
+msgstr "{0, plural, one {один час} few {# часа} other {# часов} }"

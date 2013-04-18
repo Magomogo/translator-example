@@ -50,6 +50,7 @@ function addl() {
 <hr/>
 <div>
     <?php echo $app->translate('hello'); ?>
+    <?php echo $app->translate('now'); ?>
     <?php echo $app->translate('niceDate/time:hours', array(date('H'))); ?>
     <?php echo $app->translate('niceDate/time:minutes', array(date('i'))); ?>
     <br>

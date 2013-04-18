@@ -1,0 +1,22 @@
+#. Started with capital letter
+msgid "now"
+msgstr "Now is"
+
+#. Global greeting as separate sentence
+msgid "hello"
+msgstr "Hello!"
+
+#. Amount of minutes, to be part of some message
+msgctxt "niceDate/time"
+msgid "minutes"
+msgstr "{0, plural, one {one minute} other {# minutes} }"
+
+#. Amount of pages in total.
+msgctxt "plural"
+msgid "numberOfPages"
+msgstr "Total {0, plural, one {is one page} other {are # pages} }"
+
+#. Amount of hours, to be part of some message
+msgctxt "niceDate/time"
+msgid "hours"
+msgstr "{0, plural, one {one hour} other {# hours} }"
