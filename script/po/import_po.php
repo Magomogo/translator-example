@@ -7,13 +7,15 @@ use Doctrine\CouchDB\HTTP\SocketClient as HttpClient;
 
 include __DIR__ . '/../../vendor/autoload.php';
 
+define('DB_PREFIX', '');
+
 if ($poInput = readFirstArgument($argc, $argv)) {
 
     $storage = new CouchDb(conn(dbName($poInput)), locale($poInput));
-    $source = new \Translator\Import\Source\PortableObject();
+    $sourceIterator = new \Translator\Import\Source\PortableObject();
 
     $process = new \Translator\Import\Process($storage);
-    $count = $process->run($source->select($poInput));
+    $count = $process->run($sourceIterator->select($poInput));
 
     echo "Imported $count items\n";
     echo "\n";
@@ -21,7 +23,7 @@ if ($poInput = readFirstArgument($argc, $argv)) {
 } else {
     echo "\n";
     echo "This script can import PO translations into couchDB database\n";
-    echo "Usage: ./po.php {database_name}.po\n";
+    echo "Usage: ./import_po.php {locale}.po\n";
     echo "\n";
 }
 
@@ -56,7 +58,7 @@ function readFirstLetterInUpperCase() {
 }
 
 function dbName($inputFilePath) {
-    return strtolower(substr(basename($inputFilePath), 0, -3));
+    return DB_PREFIX . strtolower(substr(basename($inputFilePath), 0, -3));
 }
 
 function locale($inputFilePath) {
