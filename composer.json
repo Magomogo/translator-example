@@ -1,14 +1,8 @@
 {
-    "name": "Magomogo/translator-example",
+    "name": "magomogo/translator-example",
     "description": "example to be translated with Magomogo/Translator application",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/Magomogo/translator-utils"
-        }
-    ],
     "require": {
-        "Magomogo/translator-utils": "dev-master",
+        "magomogo/translator-utils": "1.0.*@dev",
         "doctrine/couchdb": "dev-master"
     },
     "authors": [
