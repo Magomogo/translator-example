@@ -3,7 +3,7 @@
     "license": "MIT",
     "description": "example to be translated with Magomogo/Translator application",
     "require": {
-        "magomogo/translator-utils": "1.0.*@dev",
+        "magomogo/translator-utils": "~3.0.0",
         "doctrine/couchdb": "dev-master"
     },
     "authors": [
